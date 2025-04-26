@@ -16,7 +16,7 @@ for a in sys.argv[1:]:
 #for c in df1.columns:
 #    np.isclose( df1[c], df2[c] ) == False
 
-
+verbose = True;
 for i,df1 in enumerate(dfs):
     for j,df2 in enumerate(dfs):
         if( j >= i ):
@@ -40,9 +40,11 @@ for i,df1 in enumerate(dfs):
                 
                 bad1 = df1[ badrows ][c];
                 bad2 = df2[ badrows ][c];
-                #for x,y in zip(bad1, bad2):
-                #    print("{} <-> {}".format(x,y));
-                #    pass;
+                if( verbose ):
+                    for x,y in zip(bad1, bad2):
+                        print("{} <-> {}".format(x,y));
+                        pass;
+                    pass;
                 pass;
             pass;
         pass;
