@@ -1,0 +1,24 @@
+CXX=g++
+CC=gcc
+OPTIMIZE = -O3 -DNDEBUG
+CFLAGS = $(OPTIMIZE) -I/usr/include/EyeLink
+CXXFLAGS = $(OPTIMIZE) -I/usr/include/EyeLink
+
+
+INSTALLDIR=.
+
+
+OBJ=main.o \
+    printevent.o printrecordinginfo.o printsample.o 
+
+all:  edf2asc
+
+clean:
+	rm -rf *.o edf2asc
+
+edf2asc:$(OBJ)
+	g++ $(OPTIMIZE) -o edf2asc $(OBJ) \
+		 -ledfapi -lm -lz
+		
+
+			
