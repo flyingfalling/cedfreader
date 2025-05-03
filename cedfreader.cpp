@@ -2,10 +2,14 @@
 #include <math.h>
 #include <cstdlib>
 #include <cstdio>
+#include <iostream>
 #include <vector>
 #include <string>
 #include <cstring>
 #include <fstream>
+
+#include <math.h>
+#include <cmath>
 
 //#include <Rcpp.h>
 //#using namespace Rcpp;
@@ -1104,6 +1108,16 @@ void convert_to_csv( std::string edffname,
 
 int main(int argc, char** argv)
 {
+  if( NAN != NAN )
+    {
+      std::cout << "Nan != Nan    IS TRUE" << std::endl;
+    }
+  if( 0 != NAN )
+    {
+      std::cout << "0 != Nan    IS TRUE" << std::endl;
+    }
+  exit(0);
+  
   std::string infile = argv[1];
   std::string tag = argv[2];
   std::string outs = infile + "_" + tag + "_samples.csv";
